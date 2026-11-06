@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Game kuis informatika sederhana.">
+  <title>QuizKita - Kuis Informatika</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="QuizKita beranda">
+        <span class="brand-mark">Q</span>
+        <span>Quiz<span class="brand-accent">Kita</span></span>
+      </a>
+      <span class="subject-pill"><span class="status-dot"></span> INFORMATIKA</span>
+    </header>
+
+    <section class="screen welcome-screen" id="welcomeScreen">
+      <div class="welcome-icon" aria-hidden="true">💡</div>
+      <p class="eyebrow">SIAP MENGUJI PENGETAHUANMU?</p>
+      <h1>Seberapa jago<br><span>Informatika</span> kamu?</h1>
+      <p class="intro">Jawab 5 pertanyaan pilihan ganda yang dipilih secara acak dari kumpulan soal Informatika.</p>
+      <div class="quiz-info">
+        <div><strong>5</strong><span>Pertanyaan</span></div>
+        <div><strong>20 dtk</strong><span>Per soal</span></div>
+        <div><strong>Acak</strong><span>Urutan soal</span></div>
+      </div>
+      <button class="primary-button" id="startButton">Mulai kuis <span aria-hidden="true">→</span></button>
+      <p class="small-note">Tidak perlu akun. Langsung main!</p>
+    </section>
+
+    <section class="screen quiz-screen hidden" id="quizScreen" aria-live="polite">
+      <div class="quiz-heading">
+        <div>
+          <p class="eyebrow">SEDANG BERMAIN</p>
+          <h2> Kuis Informatika </h2>
+        </div>
+        <div class="timer" id="timerBox"><span aria-hidden="true">◷</span> <strong id="timer">20</strong><small>detik</small></div>
+      </div>
+
+      <div class="progress-row">
+        <span id="questionCounter">PERTANYAAN 1 DARI 5</span>
+        <span id="scoreLabel">Skor: 0</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+      <article class="question-card">
+        <div class="question-category" id="questionCategory">DASAR KOMPUTER</div>
+        <h3 id="questionText">Pertanyaan akan muncul di sini.</h3>
+        <div class="answer-grid" id="answerGrid">
+          <button class="answer-option" type="button"></button>
+          <button class="answer-option" type="button"></button>
+          <button class="answer-option" type="button"></button>
+          <button class="answer-option" type="button"></button>
+        </div>
+        <div class="feedback hidden" id="feedback" role="status"></div>
+      </article>
+      <div class="quiz-footer">
+        <span>Pilih satu jawaban terbaik</span>
+        <button class="next-button" id="nextButton" disabled>Berikutnya <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="screen result-screen hidden" id="resultScreen">
+      <div class="result-icon" id="resultIcon">🏆</div>
+      <p class="eyebrow">SELESAI!</p>
+      <h2 id="resultTitle">Kerja bagus!</h2>
+      <p class="result-description" id="resultDescription">Kamu sudah menyelesaikan kuis.</p>
+      <div class="score-card">
+        <span>SKOR AKHIR</span>
+        <strong id="finalScore">0</strong>
+        <small id="scoreFraction">0 dari 5 jawaban benar</small>
+      </div>
+      <div class="result-actions">
+        <button class="primary-button" id="restartButton">Main lagi <span aria-hidden="true">↻</span></button>
+        <button class="secondary-button" id="reviewButton">Lihat pembahasan</button>
+      </div>
+      <div class="review-list hidden" id="reviewList"></div>
+    </section>
+
+    <footer class="app-footer">Dibuat untuk belajar Informatika <span>•</span> Semangat terus!</footer>
+  </main>
+</body>
+</html>
